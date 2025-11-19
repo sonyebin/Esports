@@ -30,10 +30,7 @@ body{background:
     height: 56px;
     box-shadow: var(--glow);
 }
-.logo img {
-    width: 70px;   /* bigger for visibility */
-    height: auto;   /* keep aspect ratio */
-}
+
 
 .title .team-name{font-weight:900;font-size:18px}
 .title .tag{font-size:12px;color:var(--muted)}
@@ -85,7 +82,11 @@ body{background:
 
 /* shop */
 .shop-page{padding:36px}
-.products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* exactly 4 columns */
+  gap: 18px;
+}
 .product{padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
 .product-img{height:120px;border-radius:10px;background:linear-gradient(135deg,var(--accent1),var(--accent2));box-shadow:var(--glow);margin-bottom:12px}
 .product-row{display:flex;justify-content:space-between;align-items:center;gap:12px}
@@ -111,4 +112,193 @@ body{background:
   .hero-hero{flex-direction:column}
   .features{flex-direction:column}
   .highlights{flex-direction:column}
+}
+
+/* Hero section enhancements (toned down) */
+.hero-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 40px;
+    background: linear-gradient(135deg,#120012,#220022); /* darker, muted gradient */
+    color: #bb66bb; /* soft magenta for headings */
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-inner h1 {
+    font-size: 64px;
+    color: #bb66bb; /* muted magenta */
+    text-shadow: 0 0 6px #bb66bb, 0 0 12px #884488; /* smaller, softer glow */
+}
+
+.hero-inner .lead {
+    font-size: 22px;
+    margin: 15px 0 25px;
+    color: #c29cc2; /* soft muted accent */
+}
+
+.hero-cta .btn {
+    padding: 12px 28px;
+    margin-right: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    background: linear-gradient(135deg,#884488,#660066); /* muted gradient */
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 0 8px #884488; /* subtle glow */
+    transition: all 0.3s ease-in-out;
+}
+
+.hero-cta .btn:hover {
+    box-shadow: 0 0 15px #bb66bb, 0 0 25px #884488;
+    transform: translateY(-1px);
+}
+
+.hero-cta .btn.ghost {
+    background: transparent;
+    border: 2px solid #884488;
+}
+
+.hero-visual {
+    width: 300px;
+    height: 300px;
+    background: url('/images/QuillBot-generated-image-1.png') center/contain no-repeat;
+    filter: drop-shadow(0 0 10px #884488); /* subtle glow */
+}
+
+/* Features section */
+.features .card {
+    position: relative;
+    padding: 20px;
+    border-radius: 12px;
+    background: #220022; /* deep purple */
+    color: #c29cc2;
+    text-align: center;
+    box-shadow: 0 0 6px #660066;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.features .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 12px #884488, 0 0 20px #660066;
+}
+
+/* Spotlight section */
+.highlights .highlight {
+    background: #2b002b;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 10px #884488;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.highlights .highlight:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px #bb66bb, 0 0 30px #884488;
+}
+
+/* Highlight links */
+.highlight .small-link {
+    color: #bb66bb;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.highlight .small-link:hover {
+    text-shadow: 0 0 6px #884488, 0 0 12px #bb66bb;
+}
+
+/* Footer */
+.site-footer {
+    text-align: center;
+    padding: 20px;
+    background: #120012;
+    color: #b599b5;
+}
+
+/* Logo glow */
+.logo img {
+    width: 56px;
+    height: auto;
+    filter: drop-shadow(0 0 1px #884488) drop-shadow(0 0 10px #660066);
+}
+
+.hero-hero {
+    display: flex;
+    align-items: center;
+    padding: 60px 40px;
+    background: #120012;
+    gap: 20px; /* spacing between text and image */
+    justify-content: flex-start; /* keep items close together */
+}
+
+.hero-inner {
+    flex: 1; /* text takes available space */
+    padding-right: 10px; /* optional: small spacing from image */
+}
+
+.hero-visual {
+    flex: 0 0 auto; /* don't stretch image */
+}
+
+.hero-visual img {
+    max-width: 400px; /* smaller so it doesn't push layout */
+    height: auto;
+    border-radius: 0.5rem;
+    
+}
+
+.hero-inner h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-inner .lead {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1rem; /* spacing between buttons */
+  margin-bottom: 2rem;
+}
+
+.hero-cta .btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+}
+
+.hero-cta .btn.ghost {
+  background: transparent;
+  border: 2px solid #fff;
+}
+
+.hero-highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hero-highlights li {
+  margin-bottom: 0.75rem; /* space between list items */
+}
+
+.product-img {
+  width: 100%;           /* Take full width of the container */
+  height: 300px;         /* Set a fixed height (adjust as needed) */
+  overflow: hidden;      /* Hide anything that goes outside the box */
+  display: flex;
+  align-items: center;   /* Vertically center the image */
+  justify-content: center; /* Horizontally center the image */
+  background-color: #f5f5f5; /* Optional: placeholder background */
+}
+
+.product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* Cover the container without stretching */
 }
