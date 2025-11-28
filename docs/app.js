@@ -110,3 +110,35 @@ document.addEventListener('DOMContentLoaded', ()=>{
   });
 
 });
+
+
+function openJoinModal(planName) {
+  const modal = document.getElementById('joinModal');
+  const modalTitle = document.getElementById('modalTitle');
+
+  if (modal) {
+    modal.style.display = 'flex'; 
+    
+    if (modalTitle) {
+      modalTitle.innerText = 'Join ' + planName; 
+    }
+    if (planName === 'Free') {
+      if(paymentSection) paymentSection.style.display = 'none';
+    } else {
+      if(paymentSection) paymentSection.style.display = 'block';
+    }
+  } else {
+    console.error();
+  }
+}
+
+window.addEventListener('click', function(event) {
+  const joinModal = document.getElementById('joinModal');
+});
+
+function closeJoinModal() {
+  const modal = document.getElementById('joinModal');
+  if (modal) {
+    modal.style.display = 'none';
+  }
+}

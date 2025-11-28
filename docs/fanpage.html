@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Neon Ravens — Join Us</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="ICON" href="./images/QuillBot-generated-image-1.png" type="image" />
+  <style>
+    .membership-intro { text-align: center; padding: 60px 20px 40px; }
+    .membership-intro h1 { font-family: 'Rajdhani', sans-serif; font-size: 3rem; margin-bottom: 10px; background: linear-gradient(90deg, #fff, var(--muted)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .membership-intro p { color: var(--muted); font-size: 1.1rem; }
+
+    .membership-container { display: flex; justify-content: center; gap: 24px; padding: 20px; flex-wrap: wrap; margin-bottom: 60px; }
+    
+    .membership-card {
+        background: rgba(15, 18, 32, 0.85); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 30px; width: 300px;
+        display: flex; flex-direction: column; transition: 0.3s; backdrop-filter: blur(10px); position: relative;
+    }
+    .membership-card:hover { transform: translateY(-8px); box-shadow: 0 15px 40px -10px rgba(0,0,0,0.6); border-color: rgba(255,255,255,0.2); }
+    
+    .card-basic { border-top: 3px solid var(--muted); } .card-cyber { border-top: 3px solid var(--accent1); } .card-elite { border-top: 3px solid var(--accent2); }
+    .membership-card h3 { font-family: 'Rajdhani', sans-serif; font-size: 1.8rem; margin: 0 0 10px; color: #fff; }
+    .card-cyber h3 { color: var(--accent1); } .card-elite h3 { color: var(--accent2); }
+    
+    .desc { color: var(--muted); font-size: 0.9rem; margin-bottom: 20px; min-height: 40px; }
+    .membership-card ul { padding: 0; list-style: none; flex-grow: 1; margin-bottom: 20px; }
+    .membership-card li { color: #eaf6ff; margin-bottom: 8px; font-size: 0.95rem; display: flex; align-items: center; }
+    .membership-card li::before { content: '•'; margin-right: 8px; color: var(--muted); font-size: 1.2rem; }
+    
+    .price { font-family: 'Rajdhani', sans-serif; font-size: 2.2rem; font-weight: 700; color: #fff; margin-bottom: 20px; }
+    .price span { font-size: 1rem; color: var(--muted); font-weight: 400; }
+
+    .membership-card .btn, .modal-body .btn {
+        width: 100%; padding: 12px; border-radius: 8px; font-family: 'Rajdhani', sans-serif; font-size: 1.1rem; font-weight: 700;
+        border: none; cursor: pointer; color: #021018; transition: 0.3s; margin-top: auto;
+        background: linear-gradient(90deg, var(--accent1), var(--accent2)); box-shadow: 0 4px 15px rgba(126, 243, 255, 0.2);
+    }
+    .membership-card .btn:hover { transform: translateY(-2px); filter: brightness(1.1); }
+
+    .faq-section { max-width: 800px; margin: 0 auto 80px; padding: 0 20px; text-align: center; }
+    .faq-section h2 { color: #fff; font-family: 'Rajdhani', sans-serif; margin-bottom: 20px; }
+    .faq-section a { display: block; padding: 15px; background: rgba(255,255,255,0.03); border-radius: 8px; color: var(--muted); text-decoration: none; text-align: left; margin-bottom: 10px; transition: 0.2s; }
+    .faq-section a:hover { color: var(--accent1); background: rgba(255,255,255,0.06); padding-left: 20px; }
+  </style>
+</head>
+<body>
+  <header class="site-header"> 
+    <div class="brand"><div class="logo"><img src="./images/QuillBot-generated-image-1.png" alt="Logo"/></div><div class="title"><div class="team-name">Neon Ravens</div><div class="tag">Rise in the Night</div></div></div>
+    <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="team.html" class="nav-link">Team</a>
+        <a href="news.html" class="nav-link">News</a>
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="fanpage.html" class="nav-link" style="color: #7ef3ff; font-weight: bold;">Fan</a>
+        <button id="cartBtnFan" class="cart-btn">Cart <span id="badgeFan" class="badge">0</span></button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="membership-intro">
+      <h1>Join Neon Ravens</h1>
+      <p>Exclusive access to our team’s content, events, and more!</p>
+    </section>
+
+    <section class="membership-container">
+      <div class="membership-card card-basic">
+        <h3>Raven Basic</h3><p class="desc">Essential updates & community access.</p>
+        <ul><li>Public Discord</li><li>Event notifications</li><li>Newsletter</li></ul>
+        <div class="price">Free</div><button class="btn" onclick="openJoinModal('Free')">Join Now</button>
+      </div>
+      <div class="membership-card card-cyber">
+        <h3>Cyber Raven</h3><p class="desc">Private access & match insights.</p>
+        <ul><li><strong>Private Discord</strong></li><li>Exclusive contents</li><li>Merch discount coupons</li><li>Event entry</li></ul>
+        <div class="price">€2.99 <span>/mo</span></div><button class="btn" onclick="openJoinModal('Cyber Raven')">Join Now</button>
+      </div>
+      <div class="membership-card card-elite">
+        <h3>Neon Elite</h3><p class="desc">Ultimate experience & exclusive merch.</p>
+        <ul><li>All Cyber benefits</li><li><strong>Annual Merch Kit</strong><li>Priority events</li></li><li>Voting rights</li></ul>
+        <div class="price">€6.99 <span>/mo</span></div><button class="btn" onclick="openJoinModal('Neon Elite')">Join Now</button>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <h2>FAQ</h2>
+      <a href="#">How to cancel subscription?</a><a href="#">How do I access the Discord Channel?</a><a href="#">Can I upgrade later?</a>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div>© Neon Ravens — Demo Site</div></footer>
+
+  <div id="cartModalFan" class="modal" aria-hidden="true">
+    <div class="modal-panel">
+      <div class="modal-header">
+        <h3>Your Cart</h3>
+        <button id="closeCartFan" class="btn small ghost">Close</button>
+      </div>
+      <div id="cartContentFan" class="cart-content"></div>
+      <div class="modal-footer">
+        <div class="total">Total: €<span id="totalAmount">0.00</span></div>
+        <div>
+          <button id="checkoutFan" class="btn">Checkout</button>
+          <button id="clearCartFan" class="btn ghost">Clear</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="joinModal" class="modal">
+      <div class="modal-panel">
+        <div class="modal-header"><h3 id="modalTitle">Join Now</h3>
+        <button onclick="document.getElementById('joinModal').style.display='none'" style="background:none;border:none;color:#fff;cursor:pointer;">✕</button>
+        </div>
+        <p style="color:var(--muted);margin-bottom:15px;">Complete your subscription.</p>
+        <form onsubmit="event.preventDefault(); alert('Welcome to the team, ' + document.getElementById('joinName').value + '!'); closeJoinModal();">
+    
+        <div style="margin-bottom: 15px;">
+            <label style="display:block; color:var(--muted); margin-bottom:5px; font-size:0.9rem;">Name</label>
+            <input type="text" id="joinName" placeholder="Enter your name" required style="width:100%; padding:10px; background:#06060a; border:1px solid rgba(255,255,255,0.2); color:#fff; border-radius:6px;">
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label style="display:block; color:var(--muted); margin-bottom:5px; font-size:0.9rem;">Email Address</label>
+            <input type="email" placeholder="name@example.com" required style="width:100%; padding:10px; background:#06060a; border:1px solid rgba(255,255,255,0.2); color:#fff; border-radius:6px;">
+        </div>
+        <div id="paymentSection" style="margin-bottom: 20px;">
+            <label style="display:block; color:var(--muted); margin-bottom:5px; font-size:0.9rem;">Payment Method</label>
+            <select id="payment" style="width:100%; padding:10px; background:#06060a; border:1px solid rgba(255,255,255,0.2); color:#fff; border-radius:6px;">
+                <option>Credit Card</option><option>PayPal</option>
+            </select>
+        </div>
+        <button type="submit" class="btn">Confirm & Join</button>
+        </form>
+      </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
